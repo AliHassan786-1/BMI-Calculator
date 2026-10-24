@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+</head>
+<body>
+
+    <script>
+        // 1. Take the user's name using prompt()
+        var userName = prompt("Enter your name:");
+
+        // 2. Take the user's weight in kilograms and convert to a Number
+        var weight = Number(prompt("Enter your weight in kilograms (kg):"));
+
+        // 3. Take the user's height in meters and convert to a Number
+        var height = Number(prompt("Enter your height in meters (m):"));
+
+        // 4 & 5. Calculate BMI using the formula: Weight / (Height * Height)
+        var bmi = weight / (height * height);
+
+        // 6. Determine the BMI category using if...else if statements and comparison operators
+        var category = "";
+        
+        if (bmi < 18.5) {
+            category = "Underweight";
+        } 
+        else if (bmi >= 18.5 && bmi <= 24.9) {
+            category = "Normal Weight";
+        } 
+        else if (bmi >= 25 && bmi <= 29.9) {
+            category = "Overweight";
+        } 
+        else {
+            category = "Obese";
+        }
+
+        // 7. Display the user's name, BMI (rounded to 1 decimal place), and category using alert()
+        var resultMessage = "Name: " + userName + "\n" +
+                            "BMI: " + bmi.toFixed(1) + "\n" +
+                            "Category: " + category;
+
+        alert(resultMessage);
+    </script>
+
+</body>
+</html>
